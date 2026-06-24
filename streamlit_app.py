@@ -19,3 +19,8 @@ minutes_added = st.number_input(
 
 if st.button("Ich habe gelernt!"):
     st.session_state.minutes += minutes_added
+
+
+total = st.session_state.minutes
+
+st.subheader(f"Gesamte Lernzeit: {total} Minuten")
