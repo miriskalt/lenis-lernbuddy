@@ -53,6 +53,9 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+st.success(f"Stufe: {stage}")
+
+
 if st.button("Neue Pflanze starten"):
     st.session_state.minutes = 0
     st.rerun()
