@@ -5,6 +5,9 @@ st.write(
     "Lass deine Pflanze wachsen, indem du lernst!"
 )
 
+if "minutes" not in st.session_state:
+    st.session_state.minutes = 0
+
 
 minutes_added = st.number_input(
     "Wie viele Minuten hast du gelernt?",
@@ -12,3 +15,7 @@ minutes_added = st.number_input(
     max_value=300,
     value=25,
 )
+
+
+if st.button("Ich habe gelernt!"):
+    st.session_state.minutes += minutes_added
