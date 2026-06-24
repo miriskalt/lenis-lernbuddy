@@ -56,6 +56,33 @@ st.markdown(
 st.success(f"Stufe: {stage}")
 
 
+if total < 30:
+    progress = total / 30
+    target = 30
+elif total < 60:
+    progress = (total - 30) / 30
+    target = 60
+elif total < 120:
+    progress = (total - 60) / 60
+    target = 120
+elif total < 300:
+    progress = (total - 120) / 180
+    target = 300
+else:
+    progress = 1.0
+    target = None
+
+
+
+if target:
+    st.write(f"Nächste Wachstumsstufe bei {target} Minuten!")
+    st.progress(progress)
+    
+else:
+    st.balloons()
+    st.write("🎉 Deine Pflanze ist zu einem mächtigen Lernbaum geworden!")
+
+
 if st.button("Neue Pflanze starten"):
     st.session_state.minutes = 0
     st.rerun()
