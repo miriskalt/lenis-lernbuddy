@@ -24,3 +24,11 @@ if st.button("Ich habe gelernt!"):
 total = st.session_state.minutes
 
 st.subheader(f"Gesamte Lernzeit: {total} Minuten")
+
+
+
+
+
+if st.button("Neue Pflanze starten"):
+    st.session_state.minutes = 0
+    st.rerun()
